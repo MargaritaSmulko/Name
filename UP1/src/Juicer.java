@@ -54,9 +54,9 @@ public class Juicer {
             PrintWriter pw1 = new PrintWriter("juice1.out");
             PrintWriter pw2 = new PrintWriter("juice2.out");
             PrintWriter pw3 = new PrintWriter("juice3.out");
-            Object [] mas = allComponents1.toArray();
+            Iterator it = allComponents1.iterator();
             for (int i = 0; i < allComponents1.size(); i++) {
-                pw1.println(mas[i].toString());
+                pw1.println(it.next());
             }
             for (int i = 0; i < allComponents2.size(); i++) {
                 pw2.println(allComponents2.get(i));
