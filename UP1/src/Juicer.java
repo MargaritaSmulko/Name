@@ -4,13 +4,7 @@ import java.util.*;
 /**
  * Created by User on 13.02.2015.
  */
-class MyComparator implements Comparator<String>{
 
-    @Override
-    public int compare(String o1, String o2) {
-        return o1.compareTo(o2);
-    }
-}
 class ComparatorCount implements Comparator<Juice>{
     public int compare(Juice j1, Juice j2){
         if(j1.getCount() > j2.getCount()){
@@ -102,7 +96,7 @@ public class Juicer {
     }
 
     public void sort(){
-        Collections.sort(allComponents2, new  MyComparator());
+        Collections.sort(allComponents2);
     }
 
 }

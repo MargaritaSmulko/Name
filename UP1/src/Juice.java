@@ -29,7 +29,7 @@ public class Juice {
     }
 
     public void sort (){
-        Collections.sort(components, new MyComparator());
+        Collections.sort(components);
     }
     @Override
     public String toString() {
