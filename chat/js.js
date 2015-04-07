@@ -1,6 +1,7 @@
-var theMsg = function(text){
+var theMsg = function(text, nameUser){
 	return{
 		description:text,
+		name: nameUser,
 		id: uniqueId()
 	}
 };
@@ -10,7 +11,7 @@ var uniqueId = function() {
 	return Math.floor(date * random).toString();
 };
 var msgList = [];
-
+var userName;
 function run(){
 	var appContainer = document.getElementsByClassName('chat')[0];
 	appContainer.addEventListener('click', delegateEvent);
@@ -38,11 +39,15 @@ function delegateEvent(evtObj) {
 	if(evtObj.type === 'click'
 		&& evtObj.target.classList.contains('btn-add'))
 		onSendButtonClick();
+	if(evtObj.type === 'click' && evtObj.target.classList.contains('addName'))
+		onAddButtonClick();
 }
 
 function onSendButtonClick(){
+	if(userName=='')
+		userName = "ANONIM";	
 	var msgText = document.getElementById('msgField');
-	var newMsg = theMsg(msgText.value);
+	var newMsg = theMsg(msgText.value,userName);
 
 	if(msgText.value == '')
 		return;
@@ -52,9 +57,14 @@ function onSendButtonClick(){
 	store(msgList);
 }
 
+function onAddButtonClick(){
+	userName = document.getElementById('nameField').value;
+}
 function createItem(msg){
 	var msgBlock = document.createElement('div');
-	var htmlAsText = '<div class="well userMsg" msgId="идентификатор" >Message text </div>';
+	var htmlAsText = '<div class="well userMsg" msgId="идентификатор" >user name: Message text <br>  +
+	<button id = "addName" type = "button" class="btn btn-primary btn-sm del">Delete</button> + 
+	 </div> <br>';
 	msgBlock.innerHTML = htmlAsText;
 	update(msgBlock.firstChild,msg);
 	return msgBlock.firstChild;
@@ -62,7 +72,7 @@ function createItem(msg){
 }
 function update(divItem, message){
 	divItem.setAttribute('msgId', message.id);
-	divItem.lastChild.textContent = message.description;
+	divItem.lastChild.textContent = message.name+": "+ message.description;
 }
 
 function store(listToSave) {
@@ -73,7 +83,7 @@ function store(listToSave) {
 		return;
 	}
 
-	localStorage.setItem("History", JSON.stringify(listToSave));
+	localStorage.setItem("MyHistory", JSON.stringify(listToSave));
 }
 function restore() {
 	if(typeof(Storage) == "undefined") {
@@ -81,6 +91,6 @@ function restore() {
 		return;
 	}
 
-	var item = localStorage.getItem("History");
+	var item = localStorage.getItem("MyHistory");
 	return item && JSON.parse(item);
 }

@@ -1,6 +1,6 @@
 .textarea{
 	height: 350px;
-	width: 550px;
+	width: 650px;
 	float: left;
 	border: 1px solid #000000;
 	background-color: #ffffff;
@@ -9,7 +9,7 @@
 
 }
 #left{
-	width: 550px;
+	width: 650px;
 	float: center;
 }
 .chat{
@@ -17,7 +17,7 @@
 	margin-left: 10%;
 	margin-bottom: auto;
 	width: 1000px;
-	height: 800px;
+	
 	
 }
 
@@ -26,7 +26,7 @@
 }			
 .msg{
 	height: 70px;
-	width: 550px;
+	width: 650px;
 }
 
 .chatName {
@@ -38,12 +38,16 @@
 }
 #msgField{
 	height: 70px;
-	width: 550px;
+	width: 650px;
 }
 .well{
 	float: right;
-	width: 300px;
+	width: 400px;
 }
 #btnDel{
 	float: right;
+}
+#right{
+	float: right;
+	width: 350px;
 }
