@@ -1,0 +1,53 @@
+.textarea{
+	height: 350px;
+	width: 650px;
+	float: left;
+	border: 1px solid #000000;
+	background-color: #ffffff;
+	overflow-x:none;
+	overflow-y: auto;
+
+}
+#left{
+	width: 650px;
+	float: center;
+}
+.chat{
+	margin-top: 3%;
+	margin-left: 10%;
+	margin-bottom: auto;
+	width: 1000px;
+	
+	
+}
+
+#msgfield{
+	font-weight: 300px;
+}			
+.msg{
+	height: 70px;
+	width: 650px;
+}
+
+.chatName {
+	text-align: center;
+
+}
+#addButton{
+	float: right;
+}
+#msgField{
+	height: 70px;
+	width: 650px;
+}
+.well{
+	float: right;
+	width: 400px;
+}
+.del{
+	float: right;
+}
+#right{
+	float: right;
+	width: 350px;
+}

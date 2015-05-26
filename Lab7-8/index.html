@@ -1,0 +1,29 @@
+<html>
+ <head>
+ <meta charset ="UTF-8">
+  <title>My Chat</title>
+  <meta http-equiv="Content-Type" content="text/html">
+  <link rel="stylesheet" href="bootstrap.css" /> 
+  <link rel="stylesheet" href="css/chat.css">
+  <script src="js/chat.js"></script>
+ </head>
+
+ <body  background="fon1.jpg" title="0_c230b_1849cfa7_XL" bgproperties="unfixed" onload="run();">
+
+ <header class = "chatName">   <h1> <b> <font color=#4B0082><big><big><big>My Chat</big></big></big></font> </b> </h1> </header>
+   <div class = "chat">    
+   <div id = "right"> 
+            <input id = "nameField" type= "text" class="nameInput" placeholder = "Input your name" >
+            <button id = "addName" type = "button" class="btn btn-primary btn-sm addName">Enter</button>
+
+   </div>   
+<div id = "left">	
+    <div class="textarea" id="conversation"></div>
+              <div class="input form-inline">
+                <input id="msgField" type="text" class="form-control todo-input" placeholder="Input your message">
+                <button id="addButton" type="button" class="btn btn-warning btn-add btn-lg" >Send</button>
+            </div>
+</div>
+  </div>
+ </body>
+</html>
